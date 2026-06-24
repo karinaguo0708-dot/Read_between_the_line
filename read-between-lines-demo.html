@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Read Between The Lines - 5-Day Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="read-between-lines-demo.css">
+</head>
+<body>
+  <main class="gameShell" aria-live="polite">
+    <header class="topBar">
+      <section class="dayBlock">
+        <div class="topIcon">CAL</div>
+        <div>
+          <h1 id="dayLabel">Day 1 - Monday</h1>
+          <p id="slotLabel">Morning</p>
+        </div>
+      </section>
+      <section class="statPill">
+        <span class="statIcon money">¥</span>
+        <div><b id="moneyValue">¥1000</b><small>Money</small></div>
+      </section>
+      <section class="statPill">
+        <span class="statIcon energy">⚡</span>
+        <div class="meterWrap"><b>Energy</b><div class="meter"><i id="energyMeter"></i></div><small id="energyValue">80/100</small></div>
+      </section>
+      <section class="statPill">
+        <span class="statIcon mood">☺</span>
+        <div class="meterWrap"><b>Mood</b><div class="meter green"><i id="moodMeter"></i></div><small id="moodValue">80/100</small></div>
+      </section>
+      <button class="topButton" id="memoryButton" type="button">Memory Log</button>
+      <button class="topButton" id="restartButton" type="button">Restart</button>
+    </header>
+
+    <section class="gameGrid">
+      <aside class="leftPanel panel">
+        <div class="profileCard">
+          <img src="assets/read-between-lines/characters/player-male.png" alt="Player portrait">
+          <div>
+            <h2>You</h2>
+            <p id="locationLabel">At Home</p>
+          </div>
+        </div>
+        <div class="relationshipPanel">
+          <h3>Relationships</h3>
+          <div id="relationships"></div>
+        </div>
+      </aside>
+
+      <section class="mapPanel" aria-label="Main map">
+        <div class="hintBar" id="hintBar">Day 1: There are active events today.</div>
+        <div class="dayBanner" id="dayBanner" aria-hidden="true"></div>
+        <img class="mainMap" src="assets/read-between-lines/maps/main-map.png" alt="City map">
+        <div id="mapButtons"></div>
+      </section>
+
+      <aside class="rightPanel">
+        <section class="panel wechatPanel">
+          <div class="panelTitle">
+            <span class="wechatLogo">WX</span>
+            <h2>WeChat</h2>
+            <b id="wechatBadge">0</b>
+          </div>
+          <div id="wechatList" class="wechatList"></div>
+          <button class="primaryAction" id="openWechatButton" type="button">Open WeChat</button>
+        </section>
+        <section class="panel">
+          <h2>Today's Events</h2>
+          <div id="eventList" class="eventList"></div>
+        </section>
+        <section class="panel">
+          <h2>Memory Log</h2>
+          <div class="memoryPreview" id="memoryPreview">Choices will appear here as memories, not raw scores.</div>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <div class="modalBackdrop" id="modalBackdrop" hidden>
+    <section class="sceneModal" id="sceneModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"></section>
+  </div>
+
+  <script src="read-between-lines-demo.js"></script>
+</body>
+</html>
